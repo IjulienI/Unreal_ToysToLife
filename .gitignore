@@ -1,0 +1,25 @@
+# Unreal
+/Binaries
+/Build
+/DerivedDataCache
+/Intermediate
+/Platforms
+/Saved
+
+# Local
+/Local
+/Content/Local
+
+# Plugins
+/Plugins/*/Build
+/Plugins/*/Binaries
+/Plugins/*/Intermediate
+
+.idea/
+.vs/
+.vsconfig
+*.sln.DotSettings.user
+*.sln
+.editorconfig
+shadertoolsconfig.json
+*.pdb
