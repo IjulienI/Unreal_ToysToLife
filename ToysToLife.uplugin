@@ -1,0 +1,23 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "ToysToLife",
+	"Description": "",
+	"Category": "Other",
+	"CreatedBy": "Julien SOUM",
+	"CreatedByURL": "https://github.com/IjulienI",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "ToysToLife",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
