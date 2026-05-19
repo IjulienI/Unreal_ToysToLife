@@ -4,6 +4,8 @@
 
 #include "Modules/ModuleManager.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogTTLGameplay, Log, All);
+
 class FToysToLifeModule : public IModuleInterface
 {
 public:

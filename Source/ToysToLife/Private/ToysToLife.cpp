@@ -4,6 +4,8 @@
 
 #define LOCTEXT_NAMESPACE "FToysToLifeModule"
 
+DEFINE_LOG_CATEGORY(LogTTLGameplay);
+
 void FToysToLifeModule::StartupModule()
 {
 
