@@ -10,7 +10,7 @@ TTL_SimulatorStub::TTL_SimulatorStub()
 
 TTL_SimulatorStub::~TTL_SimulatorStub()
 {
-    Stop();
+    Shutdown();
 }
 
 bool TTL_SimulatorStub::Start()
@@ -20,7 +20,7 @@ bool TTL_SimulatorStub::Start()
     return true;
 }
 
-void TTL_SimulatorStub::Stop()
+void TTL_SimulatorStub::Shutdown()
 {
     if (bTagPresent)
     {

@@ -22,7 +22,7 @@ public:
     
     // Interface
     virtual bool Start() override;
-    virtual void Stop() override;
+    virtual void Shutdown() override;
     virtual bool IsConnected() const override { return true; }
     virtual FString GetReaderName() const override { return TEXT("NFC Simulator"); }
     

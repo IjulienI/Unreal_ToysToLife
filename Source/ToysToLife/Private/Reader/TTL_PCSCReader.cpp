@@ -10,7 +10,7 @@ TTL_PCSCReader::TTL_PCSCReader() {}
 
 TTL_PCSCReader::~TTL_PCSCReader()
 {
-    Stop();
+    Shutdown();
 }
 
 bool TTL_PCSCReader::Start()
@@ -67,14 +67,16 @@ bool TTL_PCSCReader::Start()
 #endif
 }
 
-void TTL_PCSCReader::Stop()
+void TTL_PCSCReader::Shutdown()
 {
     bRunning = false;
     
     if (Thread)
     {
-        // Todo : Fix the overflow !!!!
-        Thread->WaitForCompletion();
+        if (Thread->GetThreadID() != FPlatformTLS::GetCurrentThreadId())
+        {
+            Thread->WaitForCompletion();
+        }
         delete Thread;
         Thread = nullptr;
     }
@@ -167,6 +169,11 @@ uint32 TTL_PCSCReader::Run()
 void TTL_PCSCReader::Exit()
 {
     bConnected = false;
+}
+
+void TTL_PCSCReader::Stop()
+{
+    bRunning = false;
 }
 
 bool TTL_PCSCReader::EstablishContext()

@@ -67,7 +67,7 @@ void UTTL_GameplaySubsystem::StopReader()
     
     if (Reader.Get() != Stub.Get())
     {
-        Reader->Stop();
+        Reader->Shutdown();
     }
     
     Reader.Reset();

@@ -24,7 +24,7 @@ public:
     
     // Interface
     virtual bool Start() override;
-    virtual void Stop() override;
+    virtual void Shutdown() override;
     virtual bool IsConnected() const override;
     virtual FString GetReaderName() const override;
     
@@ -32,6 +32,7 @@ public:
     virtual bool Init() override;
     virtual uint32 Run() override;
     virtual void Exit() override;
+    virtual void Stop() override;
     
 private:
     FRunnableThread* Thread = nullptr;
