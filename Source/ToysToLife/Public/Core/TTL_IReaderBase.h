@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "TTL_Types.h"
 #include "Containers/Queue.h"
 
 class TOYSTOLIFE_API TTL_IReaderBase
@@ -15,4 +16,6 @@ public:
     
     virtual bool IsConnected() const = 0;
     virtual FString GetReaderName() const = 0;
+    
+    TQueue<FNFCRawEvent, EQueueMode::Spsc> EventQueue;
 };
