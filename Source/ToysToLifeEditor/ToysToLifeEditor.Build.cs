@@ -20,6 +20,9 @@ public class ToysToLifeEditor : ModuleRules
                 "Engine",
                 "Slate",
                 "SlateCore",
+                "ToysToLife",
+                "EditorSubsystem",
+                "UnrealEd",
             }
         );
     }
