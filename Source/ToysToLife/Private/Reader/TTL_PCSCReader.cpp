@@ -141,23 +141,23 @@ uint32 TTL_PCSCReader::Run()
                 
                 LastUID.Empty();
             }
-            else
-            {
-                if (bTagPresent)
-                {
-                    bTagPresent = false;
-                    FNFCRawEvent Event;
-                    Event.EventType = ENFCEventType::TagRemoved;
-                    Event.UID = LastUID;
-                    EventQueue.Enqueue(Event);
-                    LastUID.Empty();
-                }
-
-                UE_LOG(LogTTLGameplay, Warning, TEXT("TTL_PCSCReader: [Thread] No readers found. Retrying..."));
-
-            }
-            FPlatformProcess::Sleep(PollingIntervalSec);
         }
+        else
+        {
+            if (bTagPresent)
+            {
+                bTagPresent = false;
+                FNFCRawEvent Event;
+                Event.EventType = ENFCEventType::TagRemoved;
+                Event.UID = LastUID;
+                EventQueue.Enqueue(Event);
+                LastUID.Empty();
+            }
+
+            UE_LOG(LogTTLGameplay, Warning, TEXT("TTL_PCSCReader: [Thread] No readers found. Retrying..."));
+
+        }
+        FPlatformProcess::Sleep(PollingIntervalSec);
     }
     
     ReleaseContext();
