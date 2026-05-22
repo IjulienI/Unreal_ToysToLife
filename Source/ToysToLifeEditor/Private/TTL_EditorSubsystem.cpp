@@ -117,8 +117,30 @@ bool UTTL_EditorSubsystem::RemoveRowFromDataTable(UDataTable* TargetTable, const
     if (!TargetTable) return false;
     if (!TargetTable->GetRowMap().Contains(RowName)) return false;
     
-    TargetTable->RemoveRow(RowName);
+    TMap<FName, FFigurineData> RowsBackup;
+    
+    for (TPair<FName, unsigned char*> RowMap : TargetTable->GetRowMap())
+    {
+        if (RowMap.Key == RowName)
+        {
+            continue;
+        }
+
+        if (const FFigurineData* RowData = reinterpret_cast<const FFigurineData*>(RowMap.Value))
+        {
+            RowsBackup.Add(RowMap.Key, *RowData);
+        }
+    }
+    TargetTable->Modify();
+    TargetTable->EmptyTable();
+    
+    for (TPair<FName, FFigurineData> Backup : RowsBackup)
+    {
+        TargetTable->AddRow(Backup.Key, Backup.Value);
+    }
     TargetTable->MarkPackageDirty();
+    TargetTable->PostEditChange();
+    
     return true;
 }
 
