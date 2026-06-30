@@ -1,4 +1,4 @@
-# NFC as a Gameplay Controller — Research Project
+# NFC as a Gameplay Controller - Research Project
 
 ## Introduction
 
@@ -100,8 +100,8 @@ The gameplay logic doesn't change at all. Whether the physical object is a Skyla
 | | Skylanders Portal (HID) | Standard Reader (PC/SC) |
 |---|---|---|
 | Protocol | Proprietary, undocumented | Standard, Microsoft-documented |
-| Driver install | Required (WinUSB via Zadig) | None — native Windows |
-| Hardware cost | 5–15€ secondhand | ~25€ new |
+| Driver install | Required (WinUSB via Zadig) | None, native Windows |
+| Hardware cost | 5-15€ secondhand | ~25€ new |
 | Tag cost | Skylanders figurines only | Any NFC sticker, ~0.20€ |
 | Multi-tag | 3 simultaneous (3 antennas) | 1 at a time (1 antenna) |
 | Open-source reference | Dolphin Emulator | Full Microsoft documentation |
